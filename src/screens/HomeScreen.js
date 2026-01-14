@@ -319,7 +319,7 @@ export default function HomeScreen() {
           />
           <Text style={styles.greetingText}>Hello, User!</Text>
         </View>
-
+        
         <View style={styles.titleContainer} testID="titleContainer">
           <Text style={styles.title}>Stay updated with the latest news,</Text>
           <Text style={styles.subtitle}>
@@ -328,11 +328,15 @@ export default function HomeScreen() {
         </View>
 
         <View testID="categoryList">
-        
+         <Categories
+              categories={categories}
+              activeCategory={activeCategory}
+              handleChangeCategory={handleChangeCategory}
+            />
         </View>
 
         <View testID="articleList">
-         
+         <Articles articles={filteredArticles} categories={categories} />
           </View>
       </ScrollView>
     </View>
